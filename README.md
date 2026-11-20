@@ -117,3 +117,10 @@ lookup: average -1m unaligned of user,system,softirq,irq,guest
 | Alert never fires | Run longer: `DURATION=240 ./mac-vm.sh test`; inspect `curl -s localhost:19999/api/v1/alarms?all \| jq` |
 | Install fails | `sudo journalctl -u netdata -n 50`; check the VM has internet access |
 | Custom chart missing | Confirm UDP 8125 is listening: `ss -ulpn \| grep 8125` |
+
+## Screenshots
+
+![CPU, memory and disk under load](screenshots/01-load.png)
+![cpu_usage_high alert firing](screenshots/02-alert.png)
+![Custom StatsD chart](screenshots/03-heartbeat.png)
+![Test run passing](screenshots/04-test-pass.png)
