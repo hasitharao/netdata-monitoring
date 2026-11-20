@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck setup.sh test_dashboard.sh cleanup.sh mac-vm.sh
+
+  integration:
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Netdata
+        run: sudo ./setup.sh
+      - name: Load test (alert must fire)
+        run: DURATION=120 ./test_dashboard.sh
+      - name: Clean up
+        run: sudo ./cleanup.sh --purge --yes
