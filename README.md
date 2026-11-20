@@ -120,7 +120,4 @@ lookup: average -1m unaligned of user,system,softirq,irq,guest
 
 ## Screenshots
 
-![CPU, memory and disk under load](screenshots/01-load.png)
-![cpu_usage_high alert firing](screenshots/02-alert.png)
-![Custom StatsD chart](screenshots/03-heartbeat.png)
 ![Test run passing](screenshots/04-test-pass.png)
