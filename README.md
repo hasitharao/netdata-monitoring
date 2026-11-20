@@ -121,3 +121,5 @@ lookup: average -1m unaligned of user,system,softirq,irq,guest
 ## Screenshots
 
 ![Test run passing](screenshots/04-test-pass.png)
+
+Project page: cd ~/simple-monitoring && printf '\nProject page: %s\n' "$(pbpaste)" >> README.md && tail -3 README.md
